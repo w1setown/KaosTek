@@ -1,13 +1,1 @@
 # KaosTek
-
-
-## Database diagram
-
-kunde (KundeID) ----< faktura (OrdreNummer) ----< fakturalinje
-                           |                            |
-                           |                            |
-                           v                            v
-                        (KundeID)                  (VareID)
-                           |                            |
-                           v                            v
-                        kunde                       vare
