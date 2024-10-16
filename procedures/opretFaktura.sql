@@ -14,6 +14,10 @@ END;
 */
 
 
+
+
+
+/*
 DELIMITER $$
 
 CREATE PROCEDURE OpretFaktura(
@@ -29,3 +33,33 @@ BEGIN
 END $$
 
 DELIMITER ;
+*/
+
+
+DELIMITER $$
+
+CREATE PROCEDURE OpretFaktura(
+    IN p_KundeID int,
+    IN p_Dato date,
+)
+BEGIN
+    INSERT INTO Faktura(KundeID, Dato, TotalBeløb)
+    VALUES (p_KundeID, p_Dato, 0);
+
+END $$
+
+DELIMITER ;
+
+
+
+--DDL--
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `OpretFaktura`(
+    IN p_KundeID int,
+    IN p_Dato date
+)
+BEGIN
+    INSERT INTO Faktura(KundeID, Dato, TotalBeløb)
+    VALUES (p_KundeID, p_Dato, 0);
+
+END
